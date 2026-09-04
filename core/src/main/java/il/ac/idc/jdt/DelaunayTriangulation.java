@@ -94,7 +94,7 @@ public class DelaunayTriangulation {
 		this(Arrays.asList(ps));
 	}
 
-	public DelaunayTriangulation(Collection<Point> points) {
+	public DelaunayTriangulation(Collection<? extends Point> points) {
 		modCount = 0;
 		modCount2 = 0;
 		bbMin = null;
@@ -136,7 +136,7 @@ public class DelaunayTriangulation {
 		return this.modCount;
 	}
 
-	public void insertPoints(Collection<Point> points) {
+	public void insertPoints(Collection<? extends Point> points) {
 		for (Point p : points) {
 			insertPoint(p);
 		}
